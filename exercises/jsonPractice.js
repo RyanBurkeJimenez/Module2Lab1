@@ -5,7 +5,7 @@ const fs = require('fs');
 /// Read data from file
 //Template
 const tempCourse = fs.readFileSync(
-    `${__dirname}/data.json`,
+    `../data/data.json`,
     'utf-8'
 );
 
