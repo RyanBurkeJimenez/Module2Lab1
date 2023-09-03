@@ -5,9 +5,11 @@ const fs = require('fs');
 /// Read data from file
 //Template
 const tempCourse = fs.readFileSync(
-    `${__dirname}/data.txt`,
+    `${__dirname}/data.json`,
     'utf-8'
 );
+
+const dataObj = JSON.parse(tempCourse); //String to JavaScript object
 /////////////////////////////////////
 //Create Server
 const server = httpServer.createServer(function (req, res) {
@@ -15,16 +17,15 @@ const server = httpServer.createServer(function (req, res) {
   console.log(urlParameter.query);
   console.log(urlParameter.pathname);
 
-  if (urlParameter.query.id) {
-    //if there is query parameter named id
+  if (urlParameter.query.id) {  //if there is query parameter named id read as string
     //Courses page
     if ( urlParameter.pathname === "/" ||urlParameter.pathname.toLowerCase() === "/courses") {
-      res.writeHead(200, {
-        //everything ran successfully
+      res.writeHead(200, { //everything ran successfully
         "Content-type": "text/html",
       });
-      res.end(`We received our first request from the client at resource ${urlParameter.pathname.toLowerCase()} with query parameter ${urlParameter.query.id }
-      ${tempCourse}`);
+      const course = dataObj[Number(urlParameter.query.id)];//Convert id to int to use data.JSON file
+      res.end(`We have received our first request from the client at resource ${urlParameter.pathname} with query parameter ${urlParameter.query.id}.
+      Course information for option ${Number(urlParameter.query.id) + 1} is ${JSON.stringify(course)}`); //JSON.stringify() turns objects into strings
     }
   
     else {

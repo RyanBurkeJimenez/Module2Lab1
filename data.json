@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "courseName": "IFT  458",
+        "image":"",
+        "from": "Information Technology",
+        "instructor": "Dinesh Sthapit",
+        "credits": "3",
+        "description" : "Middleware Programming and Database Security"
+    },
+    {
+        "id": 1,
+        "courseName": "IFT  380",
+        "image":"",
+        "from": "Information Technology",
+        "instructor": "Shaun Usman",
+        "credits": "3",
+        "description" : "Advanced Systems Configuration Management"
+    },
+    {
+        "id": 2,
+        "courseName": "IFT  401",
+        "image":"",
+        "from": "Information Technology",
+        "instructor": "Michael Walsh",
+        "credits": "3",
+        "description" : "Info Tech Capstone I"
+    },
+    {
+        "id": 3,
+        "courseName": "IFT  421",
+        "image":"",
+        "from": "Information Technology",
+        "instructor": "Nikita Goel",
+        "credits": "3",
+        "description" : "Data in the Cloud Info Tech"
+    }
+]
